@@ -30,6 +30,14 @@ p {
   font-size: 15px;
 }
 
+.current_city:first-letter {
+  text-transform: uppercase;
+}
+
+.current_condition:first-letter {
+  text-transform: uppercase;
+}
+
 .container {
   width: 600px;
 }
@@ -81,7 +89,7 @@ p {
   padding-left: 15px;
 }
 
-.current-units {
+.current_units {
   position: relative;
   top: -32px;
   left: 5px;
