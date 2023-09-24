@@ -1,5 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
+  background: #6b597675; 
 }
 
 h1 {
@@ -21,9 +22,8 @@ h3 {
 ul {
   list-style: none;
   font-size: 14px;
-  padding-left: 270px;
-  margin-top: -20px;
 }
+
 
 p {
   margin-top: -25px;
@@ -39,15 +39,18 @@ p {
 }
 
 .container {
-  width: 600px;
+  max-width: 600px;
+  padding: 0;
 }
 
 .box {
   display: block;
   margin: 40px auto;
-  width: 600px;
   border: 2px solid rgb(166, 162, 162);
   border-radius: 5px;
+  box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.4);
+  background-color: #efebf6;
+  padding-bottom: 15px;
 }
 
 .search {
@@ -62,6 +65,23 @@ p {
   border-radius: 50px;
   padding: 5px 20px;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+  background-color: #ffffffd4;
+}
+
+.search_btn {
+  background-color: #39133ef0;
+}
+
+.search_btn:hover {
+  background-color: #39133eca;
+}
+
+.btn-secondary {
+  background-color: #2a1049e9;
+}
+
+.btn-secondary:hover {
+  background-color: #2a1049c7;
 }
 
 .search_btn,
@@ -72,21 +92,37 @@ p {
 }
 
 .current_location {
-  padding: 15px 50px;
+  padding: 10px 30px;
 }
 
 .city_condition {
   padding-top: 10px;
 }
 
+.location_border {
+  margin-right: 30px;
+  padding: 20px;
+  width: auto;
+  height: auto;
+  border: 5px dotted #6b3e8a;
+  border-radius: 20px;
+}
+
+.temperature_and_icon {
+  padding: 10px 5px 5px 20px;
+  height: 105px;
+  width: 250px;
+}
+
 .current_temperature {
   font-size: 60px;
   font-weight: 400;
-  padding-left: 6px;
 }
 
 .current_temperature_icon {
+  padding-top: 5px;
   padding-left: 15px;
+  position: absolute;
 }
 
 .current_units {
