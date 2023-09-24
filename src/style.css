@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
-  background: #6b597675; 
+  background: #6b597675;
 }
 
 h1 {
@@ -23,7 +23,6 @@ ul {
   list-style: none;
   font-size: 14px;
 }
-
 
 p {
   margin-top: -25px;
@@ -100,7 +99,6 @@ p {
 }
 
 .location_border {
-  margin-right: 30px;
   padding: 20px;
   width: auto;
   height: auto;
