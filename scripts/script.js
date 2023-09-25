@@ -25,7 +25,7 @@ function formatDate(date) {
 }
 
 function showWeather(response) {
-  console.log(response.data)
+  console.log(response.data);
   document.querySelector("#current-city").innerHTML = response.data.city;
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.temperature.current

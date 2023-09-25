@@ -20,8 +20,9 @@ h3 {
 }
 
 ul {
+  padding: 5px 0;
   list-style: none;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 p {
@@ -44,6 +45,7 @@ p {
 
 .box {
   display: block;
+  max-width: 600px;
   margin: 40px auto;
   border: 2px solid rgb(166, 162, 162);
   border-radius: 5px;
@@ -108,8 +110,8 @@ p {
 
 .temperature_and_icon {
   padding: 10px 5px 5px 20px;
-  height: 105px;
-  width: 250px;
+  max-height: 110px;
+  max-width: 250px;
 }
 
 .current_temperature {
@@ -139,4 +141,39 @@ p {
 a:hover {
   color: #0b4485;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 550px) {
+  img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .current_temperature_icon {
+    padding-top: 15px;
+    padding-left: 10px;
+  }
+
+  .search {
+    margin-bottom: 0;
+  }
+
+  .search_bar {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  .buttons {
+    display: block;
+    margin: 10px auto;
+  }
+
+  .current_location {
+    padding: 10px 10px;
+  }
+
+  .temperature_and_icon {
+    padding-top: 0;
+  }
 }
