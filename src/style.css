@@ -1,6 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
-  background: #6b597675;
+  background-color: #250b41bc;
+  height: 100vh;
 }
 
 h1 {
@@ -47,10 +48,14 @@ p {
   display: block;
   max-width: 600px;
   margin: 40px auto;
-  border: 2px solid rgb(166, 162, 162);
+  border: 2px solid rgb(45, 23, 56);
   border-radius: 5px;
-  box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.4);
-  background-color: #efebf6;
+  box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.7);
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.863) 0%,
+    rgba(221, 216, 231, 0.753) 70%,
+    rgba(176, 162, 197, 0.908) 90%
+  );
   padding-bottom: 15px;
 }
 
@@ -144,14 +149,40 @@ a:hover {
 }
 
 @media screen and (max-width: 550px) {
+  ul {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .box {
+    width: 95%;
+    height: auto;
+  }
+
+  .city_condition {
+    width: 100%;
+    text-align: center;
+  }
+
+  .location_border {
+    padding: 15px;
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+  }
+
   img {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
 
   .current_temperature_icon {
-    padding-top: 15px;
-    padding-left: 10px;
+    padding-top: 14px;
+    padding-left: 15px;
   }
 
   .search {
@@ -161,7 +192,7 @@ a:hover {
   .search_bar {
     display: block;
     margin: 0 auto;
-    width: 300px;
+    width: 70%;
   }
 
   .buttons {
@@ -169,11 +200,20 @@ a:hover {
     margin: 10px auto;
   }
 
-  .current_location {
-    padding: 10px 10px;
+  .temperature_and_icon {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
   }
 
-  .temperature_and_icon {
-    padding-top: 0;
+  .current_temperature {
+    font-size: 70px;
+  }
+
+  .current_units {
+    position: relative;
+    top: -34px;
+    left: 5px;
+    font-size: 20px;
   }
 }
