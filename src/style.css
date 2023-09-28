@@ -5,30 +5,34 @@ body {
 }
 
 h1 {
-  line-height: 0.9;
+  font-size: 35px;
+  line-height: 1.2;
   font-weight: 400;
 }
 
 h2 {
-  line-height: 0.7;
+  line-height: 1;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 h3 {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 ul {
-  padding: 5px 0;
+  margin: 0;
+  padding: 5px;
   list-style: none;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 p {
-  margin-top: -25px;
+  margin: -25px 20px;
   font-size: 15px;
+  border-radius: 30px;
+  text-align: center;
 }
 
 .current_city:first-letter {
@@ -105,27 +109,42 @@ p {
   padding-top: 10px;
 }
 
-.location_border {
-  padding: 20px;
-  width: auto;
-  height: auto;
-  border: 5px dotted #6b3e8a;
-  border-radius: 20px;
+.temperature_and_icon {
+  padding: 10px 10px 5px 20px;
 }
 
-.temperature_and_icon {
-  padding: 10px 5px 5px 20px;
-  max-height: 110px;
-  max-width: 250px;
+p,
+.location_border,
+.temp_icon,
+.indicators_border {
+  width: auto;
+  height: auto;
+  border: 2px dotted #643b7f;
+  background-color: #8d759c63;
+}
+
+.location_border {
+  padding: 15px 20px;
+  border-radius: 30px;
+}
+
+.temp_icon {
+  padding: 0 20px;
+  border-radius: 30px;
+}
+
+.indicators_border {
+  padding: 5px 20px;
+  border-radius: 25px;
 }
 
 .current_temperature {
-  font-size: 60px;
+  font-size: 65px;
   font-weight: 400;
 }
 
 .current_temperature_icon {
-  padding-top: 5px;
+  padding-top: 14px;
   padding-left: 15px;
   position: absolute;
 }
@@ -135,6 +154,10 @@ p {
   top: -32px;
   left: 5px;
   font-size: 17px;
+}
+
+.current_indicators {
+  margin-top: 10px;
 }
 
 .unit_celcius,
@@ -152,10 +175,15 @@ a:hover {
   ul {
     margin: 0;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
   }
 
   .box {
@@ -175,13 +203,8 @@ a:hover {
     width: 90%;
   }
 
-  img {
-    width: 80px;
-    height: 80px;
-  }
-
   .current_temperature_icon {
-    padding-top: 14px;
+    padding-top: 13px;
     padding-left: 15px;
   }
 
@@ -204,16 +227,33 @@ a:hover {
     width: 100%;
     display: block;
     margin: 0 auto;
+    padding: 10px 0 0 0;
   }
 
   .current_temperature {
     font-size: 70px;
   }
 
+  .temp_icon {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+  }
+
   .current_units {
     position: relative;
     top: -34px;
     left: 5px;
-    font-size: 20px;
+    font-size: 19px;
+  }
+
+  .current_indicators {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .indicators_border {
+    margin: 10px 25px;
+    border-radius: 20px;
   }
 }
