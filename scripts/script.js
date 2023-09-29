@@ -25,7 +25,6 @@ function formatDate(date) {
 }
 
 function showWeather(response) {
-  console.log(response.data);
   document.querySelector("#current-city").innerHTML = response.data.city;
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.temperature.current
@@ -38,6 +37,12 @@ function showWeather(response) {
 
   document.querySelector("#current-condition").innerHTML =
     response.data.condition.description;
+  document
+    .querySelector("#current-icon")
+    .setAttribute(
+      "src",
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    );
 }
 
 function searchCity(city) {
