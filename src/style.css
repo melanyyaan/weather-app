@@ -147,8 +147,8 @@ p,
 }
 
 .indicators_border {
-  padding: 5px 20px;
   border-radius: 25px;
+  margin-top: 10px;
 }
 
 .current_temperature {
@@ -164,7 +164,7 @@ p,
 }
 
 .current_indicators {
-  margin-top: 10px;
+  padding: 5px 20px;
 }
 
 .unit_celcius,
@@ -178,7 +178,7 @@ a:hover {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 610px) {
   ul {
     margin: 0;
     text-align: center;
@@ -186,11 +186,6 @@ a:hover {
     font-weight: 300;
     display: flex;
     justify-content: space-around;
-  }
-
-  img {
-    width: 100px;
-    height: 100px;
   }
 
   .box {
