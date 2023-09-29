@@ -121,7 +121,7 @@ img {
 
 p,
 .location_border,
-.temp_icon,
+.temp_icon_border,
 .indicators_border {
   width: auto;
   height: auto;
@@ -140,7 +140,7 @@ p,
   border-radius: 30px;
 }
 
-.temp_icon {
+.temp_icon_border {
   padding: 0 0 0 20px;
   border-radius: 30px;
   max-height: 103px;
@@ -238,20 +238,33 @@ a:hover {
   }
 
   .current_temperature {
-    font-size: 70px;
+    font-size: 60px;
   }
 
-  .temp_icon {
-    width: 75%;
+  .temp_icon_border {
+    width: 85%;
     display: block;
     margin: 0 auto;
   }
 
+  .temp_icon {
+    padding: 5px 0 0 20px;
+    display: block;
+    margin: 0 auto;
+    max-width: 260px;
+    max-height: 100px;
+  }
+
+  .current_temperature_icon {
+    left: -20px;
+    top: -21px;
+  }
+
   .current_units {
     position: relative;
-    top: -34px;
+    top: -31px;
     left: 5px;
-    font-size: 19px;
+    font-size: 17px;
   }
 
   .current_indicators {
