@@ -196,6 +196,34 @@ a:hover {
   color: rgba(17, 16, 17, 0.573);
 }
 
+.forecast {
+  margin: 5px 20px;
+  text-align: center;
+}
+
+.forecast_date {
+  font-size: 17px;
+  opacity: 0.8;
+}
+
+.forecast_icon {
+  padding: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.forecast_temperatures {
+  font-size: 15px;
+}
+
+.forecast_temp_max {
+  font-weight: 500;
+}
+
+.forecast_temp_min {
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 610px) {
   ul {
     margin: 0;

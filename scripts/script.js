@@ -24,6 +24,35 @@ function formatDate(date) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2">
+    <div class="forecast_date">${day}</div>
+    <img
+      src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+      alt=""
+      class="forecast_icon"
+    />
+    <div class="forecast_temperatures">
+      <span class="forecast_temp_max">25°</span>
+      <span class="forecast_temp_min">12°</span>
+    </div>
+  </div>
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.city;
 
@@ -112,3 +141,6 @@ temperatureFahrenheit.addEventListener("click", convertFahrenheit);
 
 let temperatureCelsius = document.querySelector("#celsius-link");
 temperatureCelsius.addEventListener("click", convertCelsius);
+
+searchCity("Cologne");
+showForecast();
