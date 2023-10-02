@@ -26,9 +26,11 @@ function formatDate(date) {
 
 function showWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.city;
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.temperature.current
-  );
+
+  celsiusTemperature = response.data.temperature.current;
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(celsiusTemperature);
+
   document.querySelector("#current-humidity").innerHTML =
     response.data.temperature.humidity;
   document.querySelector("#current-wind").innerHTML = Math.round(
@@ -62,9 +64,6 @@ let date = document.querySelector("#current-date");
 let currentDate = new Date();
 date.innerHTML = formatDate(currentDate);
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
 function handlePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -83,27 +82,33 @@ let currentCity = document.querySelector("#current-city-btn");
 
 currentCity.addEventListener("click", searchLocation);
 
-// function searchCity(event) {
-//   event.preventDefault();
-//   let h1 = document.querySelector("#current-city");
-//   let searchInput = document.querySelector("#search-input");
-//   h1.innerHTML = searchInput.value;
-// }
+function convertFahrenheit(event) {
+  event.preventDefault();
+  temperatureCelsius.classList.remove("active");
+  temperatureFahrenheit.classList.add("active");
 
-// function convertCelcius(event) {
-//   event.preventDefault();
-//   let temperatureIndex = document.querySelector("#current-temperature");
-//   temperatureIndex.innerHTML = 17;
-// }
+  let temperatureIndexFahrenheit = (celsiusTemperature * 9) / 5 + 32;
+  document.querySelector("#current-temperature").innerHTML = Math.round(
+    temperatureIndexFahrenheit
+  );
+}
 
-// function convertFahrenheit(event) {
-//   event.preventDefault();
-//   let temperatureIndex = document.querySelector("#current-temperature");
-//   temperatureIndex.innerHTML = 60;
-// }
+function convertCelsius(event) {
+  event.preventDefault();
+  temperatureCelsius.classList.add("active");
+  temperatureFahrenheit.classList.remove("active");
 
-// let temperatureFahrenheit = document.querySelector("#fahrenheit-link");
-// temperatureFahrenheit.addEventListener("click", convertFahrenheit);
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(celsiusTemperature);
+}
 
-// let temperatureCelcius = document.querySelector("#celcius-link");
-// temperatureCelcius.addEventListener("click", convertCelcius);
+let celsiusTemperature = null;
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+let temperatureFahrenheit = document.querySelector("#fahrenheit-link");
+temperatureFahrenheit.addEventListener("click", convertFahrenheit);
+
+let temperatureCelsius = document.querySelector("#celsius-link");
+temperatureCelsius.addEventListener("click", convertCelsius);

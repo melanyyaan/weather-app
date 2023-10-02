@@ -167,7 +167,7 @@ p,
   padding: 5px 20px;
 }
 
-.unit_celcius,
+.unit_celsius,
 .unit_fahrenheit {
   text-decoration: none;
   color: #4182c7;
@@ -176,6 +176,24 @@ p,
 a:hover {
   color: #0b4485;
   text-decoration: underline;
+}
+
+.current_units .active {
+  color: black;
+  cursor: default;
+}
+
+.current_units .active:hover {
+  text-decoration: none;
+}
+
+.code_link {
+  color: rgba(229, 217, 229, 0.573);
+  text-decoration: none;
+}
+
+.code_link:hover {
+  color: rgba(17, 16, 17, 0.573);
 }
 
 @media screen and (max-width: 610px) {
