@@ -202,6 +202,7 @@ a:hover {
 }
 
 .forecast_date {
+  margin-bottom: -8px;
   font-size: 17px;
   opacity: 0.8;
 }
@@ -213,6 +214,8 @@ a:hover {
 }
 
 .forecast_temperatures {
+  display: flex;
+  justify-content: space-around;
   font-size: 15px;
 }
 
@@ -316,5 +319,16 @@ a:hover {
   .indicators_border {
     margin: 10px 25px;
     border-radius: 20px;
+  }
+
+  .forecast_temperatures {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  img {
+    width: 80px;
+    height: 80px;
   }
 }

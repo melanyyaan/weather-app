@@ -24,33 +24,51 @@ function formatDate(date) {
   return `${day}, ${hours}:${minutes}`;
 }
 
-function showForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return days[day];
+}
+
+function showForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
-
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-  <div class="col-2">
-    <div class="forecast_date">${day}</div>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML += `
+  <div class="col">
+    <div class="forecast_date">${formatDay(forecastDay.time)}</div>
     <img
-      src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+      src=${forecastDay.condition.icon_url}
       alt=""
       class="forecast_icon"
     />
     <div class="forecast_temperatures">
-      <span class="forecast_temp_max">25°</span>
-      <span class="forecast_temp_min">12°</span>
+      <span class="forecast_temp_max">${Math.round(
+        forecastDay.temperature.maximum
+      )}°</span>
+      <span class="forecast_temp_min">${Math.round(
+        forecastDay.temperature.minimum
+      )}°</span>
     </div>
   </div>
 `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(city) {
+  let apiKey = "13ec9b28aob0203t38b64f616f4cd0fb";
+  let units = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function showWeather(response) {
@@ -74,6 +92,8 @@ function showWeather(response) {
       "src",
       `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
     );
+
+  getForecast(response.data.city);
 }
 
 function searchCity(city) {
@@ -143,4 +163,3 @@ let temperatureCelsius = document.querySelector("#celsius-link");
 temperatureCelsius.addEventListener("click", convertCelsius);
 
 searchCity("Cologne");
-showForecast();
