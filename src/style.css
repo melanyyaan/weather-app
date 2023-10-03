@@ -141,14 +141,17 @@ p,
 }
 
 .temp_icon_border {
-  padding: 0 0 0 20px;
   border-radius: 30px;
-  max-height: 103px;
 }
 
 .indicators_border {
   border-radius: 25px;
   margin-top: 10px;
+}
+
+.temp_icon {
+  max-height: 100px;
+  padding: 0 0 0 30px;
 }
 
 .current_temperature {
@@ -158,33 +161,14 @@ p,
 
 .current_units {
   position: relative;
-  top: -33px;
+  top: -29px;
   left: 3px;
-  font-size: 16px;
+  font-size: 25px;
+  opacity: 0.8;
 }
 
 .current_indicators {
   padding: 5px 20px;
-}
-
-.unit_celsius,
-.unit_fahrenheit {
-  text-decoration: none;
-  color: #4182c7;
-}
-
-a:hover {
-  color: #0b4485;
-  text-decoration: underline;
-}
-
-.current_units .active {
-  color: black;
-  cursor: default;
-}
-
-.current_units .active:hover {
-  text-decoration: none;
 }
 
 .code_link {
@@ -197,7 +181,7 @@ a:hover {
 }
 
 .forecast {
-  margin: 5px 20px;
+  margin: 15px 20px;
   text-align: center;
 }
 
@@ -292,23 +276,23 @@ a:hover {
   }
 
   .temp_icon {
-    padding: 5px 0 0 20px;
+    padding: 5px 0 0 25px;
     display: block;
     margin: 0 auto;
-    max-width: 260px;
+    max-width: 235px;
     max-height: 100px;
   }
 
   .current_temperature_icon {
-    left: -20px;
+    left: -10px;
     top: -21px;
   }
 
   .current_units {
     position: relative;
-    top: -31px;
+    top: -29px;
     left: 5px;
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .current_indicators {
@@ -323,12 +307,5 @@ a:hover {
 
   .forecast_temperatures {
     display: block;
-  }
-}
-
-@media screen and (max-width: 390px) {
-  img {
-    width: 80px;
-    height: 80px;
   }
 }

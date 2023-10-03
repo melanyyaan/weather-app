@@ -131,35 +131,7 @@ let currentCity = document.querySelector("#current-city-btn");
 
 currentCity.addEventListener("click", searchLocation);
 
-function convertFahrenheit(event) {
-  event.preventDefault();
-  temperatureCelsius.classList.remove("active");
-  temperatureFahrenheit.classList.add("active");
-
-  let temperatureIndexFahrenheit = (celsiusTemperature * 9) / 5 + 32;
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    temperatureIndexFahrenheit
-  );
-}
-
-function convertCelsius(event) {
-  event.preventDefault();
-  temperatureCelsius.classList.add("active");
-  temperatureFahrenheit.classList.remove("active");
-
-  document.querySelector("#current-temperature").innerHTML =
-    Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
-
-let temperatureFahrenheit = document.querySelector("#fahrenheit-link");
-temperatureFahrenheit.addEventListener("click", convertFahrenheit);
-
-let temperatureCelsius = document.querySelector("#celsius-link");
-temperatureCelsius.addEventListener("click", convertCelsius);
 
 searchCity("Cologne");
